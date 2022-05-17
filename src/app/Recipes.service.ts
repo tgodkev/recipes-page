@@ -26,6 +26,11 @@ export class RecipesService {
     return this.recipes.slice();
   }
 
+  //method to get recipe id for route id.
+  getRecipe(id: number) {
+    return this.recipes[id];
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.ShoppingService.addIngredients(ingredients);
   }
