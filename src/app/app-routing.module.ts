@@ -7,6 +7,7 @@ import {RecipesComponent} from './recipes/recipes.component';
 
 import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {AuthComponent} from "./auth/auth.component";
+import {AuthGaurd} from "./auth/auth.gaurd";
 
 const routes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
     //child routing below.
     path: 'recipes',
     component: RecipesComponent,
+    canActivate: [AuthGaurd],
     children: [
       {path: '', component: RecipeStartComponent},
       {path: 'new', component: RecipeEditComponent},
